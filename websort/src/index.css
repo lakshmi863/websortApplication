@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width: 1216px) and (max-width: 1279px) {
+  .bg-desktop19 {
+    background-color: #F5E9E2 !important;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1365px) {
+  .show-icon {
+    display: inline-block;
+  }
+}
+
+
+@media (min-width: 1731px) {
+  .show-icon {
+    display: inline-block;
+  }
+}
+
+
+@media (max-width: 1279px),
+       (min-width: 1366px) and (max-width: 1730px) {
+  .show-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .show-icon {
+    display: none;
+  }
+}
+
+/* iPhone 57 */
+@media (device-width: 430px) and (device-height: 932px) {
+  .menu-box {
+    margin-top: -10px;
+  }
+}
+
+/* iPhone 56 */
+@media (device-width: 430px) and (device-height: 926px) {
+  .menu-box {
+    margin-top: 5px;
+  }
+}
+
+/* iPhone 58 */
+@media (device-width: 430px) and (device-height: 844px) {
+  .menu-box {
+    margin-top: 15px;
+  }
+}
+
+@media (device-width: 430px) and (device-height: 932px) {
+  .iphone61\:flex {
+    display: flex !important;
+  }
+}
+@media (device-width: 430px) and (device-height: 926px) {
+  .iphone62\:flex {
+    display: flex !important;
+  }
+}
