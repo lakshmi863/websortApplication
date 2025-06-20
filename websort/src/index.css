@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (min-width: 1216px) and (max-width: 1279px) {
+@media (min-width: 1216px) and (max-width: 1278px) {
   .bg-desktop19 {
     background-color: #F5E9E2 !important;
   }
@@ -65,4 +65,43 @@
   .iphone62\:flex {
     display: flex !important;
   }
+}
+
+@font-face {
+  font-family: 'Fustat';
+  src: url('./assets/fonts/Fustat.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@media (min-width: 1216px) and (max-width: 1278px) {
+  .show-home-desktop19 {
+    display: block !important;
+  }
+}
+
+@media (max-width: 1215px), (min-width: 1280px) {
+  .show-home-desktop19 {
+    display: none !important;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1359px) {
+  .show-home-desktop20 {
+    display: block !important;
+  }
+}
+@media (max-width: 1279px), (min-width: 1360px) {
+  .show-home-desktop20 {
+    display: none !important;
+  }
+}
+
+.arrow-container {
+  clip-path: polygon(
+    0% 0%,
+    40% 50%,
+    0% 100%,
+    20% 100%,
+    60% 50%,
+    20% 0%
+  );
 }

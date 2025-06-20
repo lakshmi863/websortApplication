@@ -2,6 +2,13 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+  fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+        fustat: ['Fustat', 'sans-serif'], // Make sure to load it via @font-face if it's local
+        montserrat: ['Montserrat', 'sans-serif'],
+         mplus: ['"Mplus 1p"', 'sans-serif'],
+      },
+
       screens: {
         // iPhone Pro Max Models
         iphone56: { raw: "(device-width: 430px) and (device-height: 926px)" },
