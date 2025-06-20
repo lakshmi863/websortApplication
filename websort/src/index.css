@@ -84,7 +84,7 @@
     display: none !important;
   }
 }
-@media (min-width: 1280px) and (max-width: 1359px) {
+/* @media (min-width: 1280px) and (max-width: 1359px) {
   .show-home-desktop20 {
     display: block !important;
   }
@@ -93,7 +93,7 @@
   .show-home-desktop20 {
     display: none !important;
   }
-}
+} */
 
 .arrow-container {
   clip-path: polygon(
