@@ -1,4 +1,6 @@
+// src/components/Navbar.js
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { TbMenu4 } from "react-icons/tb";
 import { AiOutlineHome } from "react-icons/ai";
 
@@ -15,12 +17,12 @@ const Navbar = () => {
           className="h-20 w-52 object-contain"
         />
 
-        {/* Contact button - shown in desktop19 and above */}
+        {/* Desktop contact button */}
         <button className="hidden desktop19:inline-block rounded-xl bg-[#212062] text-white w-48 h-12">
           Contact us
         </button>
 
-        {/* Menu icon - shown only below desktop19 */}
+        {/* Mobile menu icon */}
         <div className="desktop19:hidden">
           <button onClick={() => setMenuOpen(!menuOpen)}>
             <TbMenu4 size={30} />
@@ -30,57 +32,58 @@ const Navbar = () => {
 
       {/* Desktop Nav Items */}
       <ul className="hidden desktop19:flex justify-center flex-wrap space-x-6 text-lg font-medium text-gray-800 mt-4">
-        {["About us", "Services", "Projects", "Careers"].map((item, idx) => (
+        {[
+          { name: "About us", path: "/about" },
+          { name: "Services", path: "/services" },
+          { name: "Projects", path: "/projects" },
+          { name: "Careers", path: "/careers" },
+        ].map((item, idx) => (
           <li key={idx} className="flex items-center space-x-2">
             <img
               src="https://i.imghippo.com/files/Jpzc4376Q.png"
               alt="icon"
               className="h-5 w-5 show-icon"
             />
-            <a href="#" className="hover:text-blue-600">{item}</a>
+            <Link to={item.path} className="hover:text-blue-600">
+              {item.name}
+            </Link>
           </li>
         ))}
       </ul>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Dropdown Menu */}
       {menuOpen && (
         <div
-          className={`
-            absolute right-4 z-50 mt-4
-            w-52 rounded-xl bg-[#1E2755] text-white p-4
-            font-['Jacques_Francois'] menu-box
-            iphone56:mt-[5px] iphone57:-mt-[10px] iphone58:mt-[15px]
-            iphone61:hidden iphone62:hidden
-          `}
+          className="absolute right-4 z-50 mt-4 w-52 rounded-xl bg-[#1E2755] text-white p-4 font-['Jacques_Francois'] menu-box"
         >
           <ul className="space-y-4">
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><Link to="/about">About us</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/projects">Projects</Link></li>
+            <li><Link to="/careers">Careers</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
       )}
 
-      {/* Bottom Nav - Only iPhone 61 & 62 */}
+      {/* Bottom Nav for iPhone 61/62 */}
       <div className="hidden iphone61:flex iphone62:flex fixed bottom-0 left-0 w-full z-50 bg-white text-[#1E2755] py-3 px-6 rounded-t-2xl shadow-md justify-around items-center text-sm">
-        <div className="flex flex-col items-center">
+        <Link to="/" className="flex flex-col items-center">
           <AiOutlineHome className="w-6 h-6" />
           <span>Home</span>
-        </div>
-        <div className="flex flex-col items-center">
+        </Link>
+        <Link to="/services" className="flex flex-col items-center">
           <img src="https://i.imghippo.com/files/uf2810vrs.png" alt="services" className="w-6 h-6" />
           <span>Services</span>
-        </div>
-        <div className="flex flex-col items-center">
+        </Link>
+        <Link to="/projects" className="flex flex-col items-center">
           <img src="https://i.imghippo.com/files/KkXO8020Nk.png" alt="Projects" className="w-6 h-6" />
           <span>Projects</span>
-        </div>
-        <div className="flex flex-col items-center">
+        </Link>
+        <Link to="/careers" className="flex flex-col items-center">
           <img src="https://i.imghippo.com/files/vNiR2597XDk.png" alt="Careers" className="w-6 h-6" />
           <span>Careers</span>
-        </div>
+        </Link>
       </div>
     </nav>
   );

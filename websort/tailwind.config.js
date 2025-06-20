@@ -1,23 +1,21 @@
+// tailwind.config.js
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-  fontFamily: {
+      fontFamily: {
         inter: ['Inter', 'sans-serif'],
-        fustat: ['Fustat', 'sans-serif'], // Make sure to load it via @font-face if it's local
+        fustat: ['Fustat', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
-         mplus: ['"Mplus 1p"', 'sans-serif'],
+        mplus: ['"Mplus 1p"', 'sans-serif'],
+         mukta: ['Mukta', 'sans-serif'],
       },
-
       screens: {
-        // iPhone Pro Max Models
         iphone56: { raw: "(device-width: 430px) and (device-height: 926px)" },
         iphone57: { raw: "(device-width: 430px) and (device-height: 932px)" },
         iphone58: { raw: "(device-width: 430px) and (device-height: 844px)" },
-
-  iphone61: { raw: "(device-width: 430px) and (device-height: 932px)" },
+        iphone61: { raw: "(device-width: 430px) and (device-height: 932px)" },
         iphone62: { raw: "(device-width: 430px) and (device-height: 926px)" },
-        // Desktop breakpoints
         desktop16: "1024px",
         desktop17: "1100px",
         desktop18: "1152px",
@@ -32,5 +30,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide') 
+  ],
 };
