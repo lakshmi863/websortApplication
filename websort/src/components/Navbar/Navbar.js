@@ -1,4 +1,3 @@
-// src/components/Navbar.js
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { TbMenu4 } from "react-icons/tb";
@@ -17,12 +16,14 @@ const Navbar = () => {
           className="h-20 w-52 object-contain"
         />
 
-        {/* Desktop contact button */}
-        <button className="hidden desktop19:inline-block rounded-xl bg-[#212062] text-white w-48 h-12">
-          Contact us
-        </button>
+        {/* Desktop Contact Button */}
+        <Link to="/contact" className="hidden desktop19:inline-block">
+          <button className="rounded-xl bg-[#212062] text-white w-48 h-12">
+            Contact us
+          </button>
+        </Link>
 
-        {/* Mobile menu icon */}
+        {/* Mobile Menu Icon */}
         <div className="desktop19:hidden">
           <button onClick={() => setMenuOpen(!menuOpen)}>
             <TbMenu4 size={30} />
@@ -53,9 +54,7 @@ const Navbar = () => {
 
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <div
-          className="absolute right-4 z-50 mt-4 w-52 rounded-xl bg-[#1E2755] text-white p-4 font-['Jacques_Francois'] menu-box"
-        >
+        <div className="absolute right-4 z-50 mt-4 w-52 rounded-xl bg-[#1E2755] text-white p-4 font-['Jacques_Francois'] menu-box">
           <ul className="space-y-4">
             <li><Link to="/about">About us</Link></li>
             <li><Link to="/services">Services</Link></li>

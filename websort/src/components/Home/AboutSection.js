@@ -25,7 +25,7 @@ const AboutSection = () => {
         </div>
        
       </div>
-     <h1 className="text-white text-center text-3xl font-semibold m-5 p-5">Our Project</h1>
+     <h1 className="text-white text-center text-3xl font-semibold m-1">Our Project</h1>
        <ProjectsGrid/>
     </div>
   );

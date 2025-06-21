@@ -2,60 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =========================
+   Desktop 19: 1216px–1278px
+   ========================= */
 @media (min-width: 1216px) and (max-width: 1278px) {
   .bg-desktop19 {
     background-color: #F5E9E2 !important;
   }
+
+  .show-home-desktop19 {
+    display: block !important;
+  }
+
+  .show-home-desktop20 {
+    display: none !important;
+  }
 }
 
-@media (min-width: 1280px) and (max-width: 1365px) {
+/* =========================
+   Desktop 20: 1280px–1359px
+   ========================= */
+@media (min-width: 1280px) and (max-width: 1359px) {
+  .bg-desktop20 {
+    background-color: #E5F2FF !important; /* Optional */
+  }
+
+  .show-home-desktop20 {
+    display: block !important;
+  }
+
+  .show-home-desktop19 {
+    display: none !important;
+  }
+}
+
+/* =============================
+   Hide Desktop19 & Desktop20 Elsewhere
+   ============================= */
+@media (max-width: 1215px), (min-width: 1360px) {
+  .show-home-desktop19 {
+    display: none !important;
+  }
+
+  .show-home-desktop20 {
+    display: none !important;
+  }
+}
+
+/* ========================
+   Show/hide icons logic
+   ======================== */
+@media (min-width: 1280px) and (max-width: 1365px),
+       (min-width: 1731px) {
   .show-icon {
     display: inline-block;
   }
 }
-
-
-@media (min-width: 1731px) {
-  .show-icon {
-    display: inline-block;
-  }
-}
-
 
 @media (max-width: 1279px),
-       (min-width: 1366px) and (max-width: 1730px) {
+       (min-width: 1366px) and (max-width: 1730px),
+       (max-width: 767px) {
   .show-icon {
     display: none;
   }
 }
 
-@media (max-width: 767px) {
-  .show-icon {
-    display: none;
-  }
-}
-
-/* iPhone 57 */
+/* ================
+   iPhone Tweaks
+   ================ */
 @media (device-width: 430px) and (device-height: 932px) {
   .menu-box {
     margin-top: -10px;
   }
 }
 
-/* iPhone 56 */
 @media (device-width: 430px) and (device-height: 926px) {
   .menu-box {
     margin-top: 5px;
   }
 }
 
-/* iPhone 58 */
 @media (device-width: 430px) and (device-height: 844px) {
   .menu-box {
     margin-top: 15px;
   }
 }
 
+/* Bottom navbar visibility for iPhone models */
 @media (device-width: 430px) and (device-height: 932px) {
   .iphone61\:flex {
     display: flex !important;
@@ -67,34 +100,19 @@
   }
 }
 
+/* ==================
+   Custom Font: Fustat
+   ================== */
 @font-face {
   font-family: 'Fustat';
   src: url('./assets/fonts/Fustat.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
-@media (min-width: 1216px) and (max-width: 1278px) {
-  .show-home-desktop19 {
-    display: block !important;
-  }
-}
 
-@media (max-width: 1215px), (min-width: 1280px) {
-  .show-home-desktop19 {
-    display: none !important;
-  }
-}
-/* @media (min-width: 1280px) and (max-width: 1359px) {
-  .show-home-desktop20 {
-    display: block !important;
-  }
-}
-@media (max-width: 1279px), (min-width: 1360px) {
-  .show-home-desktop20 {
-    display: none !important;
-  }
-} */
-
+/* ============================
+   Decorative Arrow Container
+   ============================ */
 .arrow-container {
   clip-path: polygon(
     0% 0%,
@@ -104,4 +122,45 @@
     60% 50%,
     20% 0%
   );
+}
+
+@media 
+  (min-width: 1024px) and (max-width: 1151px),   /* desktop16–18 */
+  (min-width: 1280px) and (max-width: 1359px),   /* desktop20 */
+  (min-width: 1366px) and (max-width: 1730px)    /* desktop21–26 */
+{
+  .show-home-desktop20 {
+    display: block !important;
+  }
+
+  .show-home-desktop19 {
+    display: none !important;
+  }
+}
+@media 
+  (max-width: 767px),
+  (min-width: 1024px) and (max-width: 1151px),
+  (min-width: 1280px) and (max-width: 1359px),
+  (min-width: 1366px) and (max-width: 1730px),
+  (device-width: 430px) and (device-height: 844px),
+  (device-width: 430px) and (device-height: 926px),
+  (device-width: 430px) and (device-height: 932px)
+{
+  .show-home-desktop20 {
+    display: block !important;
+  }
+
+  .show-home-desktop19 {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1731px) {
+  .show-home-desktop20 {
+    display: block !important;
+  }
+
+  .show-home-desktop19 {
+    display: none !important;
+  }
 }
